@@ -83,6 +83,31 @@
     });
   }
 
+  /* ---- Calendly booking popup ----
+     Lazy-loads Calendly's widget only when a "Book a Consultation" button is
+     first clicked, so it adds zero weight to normal page loads. */
+  var CALENDLY_URL = "https://calendly.com/paolanasser10/30min";
+  var calendlyScriptAdded = false;
+  function openCalendly() {
+    if (window.Calendly) { window.Calendly.initPopupWidget({ url: CALENDLY_URL }); return; }
+    if (calendlyScriptAdded) { return; }
+    calendlyScriptAdded = true;
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://assets.calendly.com/assets/external/widget.css";
+    document.head.appendChild(css);
+    var s = document.createElement("script");
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.onload = function () {
+      if (window.Calendly) { window.Calendly.initPopupWidget({ url: CALENDLY_URL }); }
+    };
+    document.body.appendChild(s);
+  }
+  var bookingLinks = document.querySelectorAll('a[href="/contact/#book"], a[href="#book"], a[data-booking]');
+  Array.prototype.forEach.call(bookingLinks, function (el) {
+    el.addEventListener("click", function (e) { e.preventDefault(); openCalendly(); });
+  });
+
   /* ---- Footer year ---- */
   var yr = document.getElementById("year");
   if (yr) { yr.textContent = new Date().getFullYear(); }
