@@ -70,13 +70,10 @@
               Thanks! We'll be in touch within one business day.
             </div>
 
-            <!--
-              TO GO LIVE: connect this form to a handler and add data-handler="live".
-              · Formspree:     action="https://formspree.io/f/XXXXXXXX" method="POST"
-              · Netlify Forms: add  netlify  to the <form> tag (and a hidden form-name field)
-              Until then, main.js shows the friendly confirmation above.
-            -->
-            <form id="contact-form" novalidate>
+            <!-- Connected to Formspree: submissions go to Paola's inbox + the Formspree dashboard.
+                 main.js submits via fetch (AJAX) and shows the inline confirmation above. -->
+            <form id="contact-form" action="https://formspree.io/f/mqejwynk" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New inquiry from thealignmentco.co" />
               <div class="form-field">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" autocomplete="name" required />

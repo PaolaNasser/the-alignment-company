@@ -47,20 +47,39 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---- Contact form (placeholder UX) ----
-     Replace the <form> action with a real handler (Formspree / Netlify Forms / etc.).
-     Until then, we prevent the default POST and show a friendly confirmation. */
+  /* ---- Contact form -> Formspree (AJAX) ----
+     Submits in the background via fetch so the page doesn't navigate away,
+     and reuses the styled inline confirmation box. */
   var form = document.getElementById("contact-form");
-  if (form && form.dataset.handler !== "live") {
+  if (form) {
+    var success = document.getElementById("form-success");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var success = document.getElementById("form-success");
-      if (success) {
-        success.classList.add("show");
-        success.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      form.reset();
+
+      var btn = form.querySelector("[type=submit]");
+      var label = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function (res) {
+        if (res.ok) {
+          if (success) {
+            success.classList.add("show");
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+          form.reset();
+        } else {
+          alert("Sorry, something went wrong sending your message. You can email us directly at paolanasser@thealignmentco.co.");
+        }
+      }).catch(function () {
+        alert("Network error. You can email us directly at paolanasser@thealignmentco.co.");
+      }).then(function () {
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      });
     });
   }
 
