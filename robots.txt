@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Replace with the real domain before launch.
-Sitemap: https://www.thealignmentcompany.com/sitemap.xml
+Sitemap: https://www.thealignmentco.com/sitemap.xml

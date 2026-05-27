@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace https://www.thealignmentcompany.com/ with the real domain before launch. -->
+<!-- Replace https://www.thealignmentco.com/ with the real domain before launch. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.thealignmentcompany.com/</loc>
+    <loc>https://www.thealignmentco.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.thealignmentcompany.com/services.html</loc>
+    <loc>https://www.thealignmentco.com/services.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.thealignmentcompany.com/about.html</loc>
+    <loc>https://www.thealignmentco.com/about.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thealignmentcompany.com/contact.html</loc>
+    <loc>https://www.thealignmentco.com/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
