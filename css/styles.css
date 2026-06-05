@@ -121,6 +121,16 @@ p { margin: 0 0 1.15rem; max-width: 65ch; }
 
 .text-center { text-align: center; }
 
+/* ---------- Brand statement (Vision / Mission style) ---------- */
+.statement {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: .25rem 0 0;
+  font-weight: 500;
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
