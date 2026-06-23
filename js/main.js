@@ -1,4 +1,4 @@
-/* The Alignment Company — small, dependency-free site script
+/* The Alignment Company - small, dependency-free site script
    Handles: mobile menu, header shadow on scroll, scroll-reveal,
    and graceful contact-form confirmation (until a real handler is wired in). */
 (function () {
