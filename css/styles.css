@@ -344,6 +344,68 @@ p { margin: 0 0 1.15rem; max-width: 65ch; }
 }
 .pso p { margin: 0; color: var(--slate); font-size: .99rem; }
 
+/* "Who this is for" intro line on a lead service */
+.service__who {
+  color: var(--slate);
+  font-size: 1rem;
+  margin: 0 0 1.25rem;
+}
+.service__who strong { color: var(--ink); font-weight: 600; }
+
+/* Price + per-service CTA at the foot of a lead service */
+.service__price {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 1.4rem 0 1.1rem;
+}
+.service__price .alt { color: var(--slate); }
+
+/* Section intro/subtext under a section header */
+.section-sub {
+  color: var(--slate);
+  font-size: 1.02rem;
+  margin: -.5rem 0 0;
+}
+.section-sub em { color: var(--ink); font-style: italic; }
+
+/* "A Note on How I Work" list (About page) */
+.note-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  max-width: 64ch;
+}
+.note-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--slate);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+.note-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .65em;
+  width: 18px;
+  height: 2px;
+  background: var(--taupe);
+}
+
+/* About narrative subheadline */
+.about-sub {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+  line-height: 1.4;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0 0 1.75rem;
+  max-width: 60ch;
+}
+
 /* ---------- CTA banner ---------- */
 .cta-banner { background: var(--ink); color: var(--canvas); text-align: center; }
 .cta-banner h2 { color: var(--canvas); }

@@ -84,8 +84,8 @@
   }
 
   /* ---- Calendly booking popup ----
-     Lazy-loads Calendly's widget only when a "Book a Consultation" button is
-     first clicked, so it adds zero weight to normal page loads. */
+     Lazy-loads Calendly's widget only when a booking button (e.g. "Book a Free
+     30-Minute Audit") is first clicked, so it adds zero weight to normal page loads. */
   var CALENDLY_URL = "https://calendly.com/paolanasser10/30min";
   var calendlyScriptAdded = false;
   function openCalendly() {
